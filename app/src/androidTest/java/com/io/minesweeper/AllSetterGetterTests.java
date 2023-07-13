@@ -12,7 +12,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 
 @SuppressWarnings("rawtypes")
-public class AllSetterGetterTest {
+public class AllSetterGetterTests {
     
     private final Class[] clazz = new Class[]{ 
         /* YOUR POJO CLASS HERE */
