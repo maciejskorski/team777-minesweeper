@@ -23,7 +23,10 @@ jobs:
         with:
           gradle-version: 7.4.2
           cache-read-only: false
-        
+
+      - name: Run unit tests with Gradle
+        run: ./gradlew createDebugUnitTestCoverageReport --continue
+
       - name: AVD cache
         uses: actions/cache@v3
         id: avd-cache
@@ -42,9 +45,6 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           profile: Nexus 6
           script: echo "Generated AVD snapshot for caching."
-
-      - name: Run unit tests with Gradle
-        run: ./gradlew createDebugUnitTestCoverageReport --continue
 
       - name: Run emulator tests
         uses: reactivecircus/android-emulator-runner@v2
